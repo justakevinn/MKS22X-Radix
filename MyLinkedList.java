@@ -34,7 +34,7 @@ public class MyLinkedList<E>{
     return true;
   }
 
-  public void add(int index, E value) {
+/*  public void add(int index, E value) {
     if (index < 0 || index > size()) {
       throw new IndexOutOfBoundsException("Index Out Of Bounds");
     }
@@ -58,7 +58,7 @@ public class MyLinkedList<E>{
        }
      }
      size ++;
-   }
+   }*/
 
 ////////////////////////////////  TO STRING  ///////////////////////////////////
   public String toString(){
@@ -178,15 +178,19 @@ public class MyLinkedList<E>{
   }
   }
 
-
-
-  public boolean remove(E value){
-    int i = indexOf(value);
-    return (remove(i) == value);
+  public E removeFront(){
+    return remove(0);
   }
 
 
-  public void extend(MyLinkedList other){
+
+  /*public boolean remove(E value){
+    int i = indexOf(value);
+    return (remove(i) == value);
+  }*/
+
+
+  public void extend(MyLinkedList<E> other){
     this.end.setNext(other.start);
     other.start.setPrev(this.end);
     end = other.end;
