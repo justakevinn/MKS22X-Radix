@@ -1,5 +1,5 @@
 //Missed a few class days and lab days. Completed with the help of Jackson Zou
-
+import java.util.*;
 @SuppressWarnings("unchecked")
 
 public class Radix{
@@ -12,7 +12,7 @@ public class Radix{
       }
     }
     int[] result = new int[data.length];
-    MyLinkedList<Integer>[] buckets = new MyLinkedList[10];
+    MyLinkedList<Integer>[] buckets = new MyLinkedList[20];
 
     for (int i = 0; i < buckets.length; i++){
       buckets[i] = new MyLinkedList<Integer>();
@@ -21,7 +21,7 @@ public class Radix{
     for (int i = 0; i < data.length; i++){
       int x = data[i] % 10;
       //    System.out.println(x);
-      buckets[x].add(data[i]);
+          buckets[x+9].add(data[i]);
       //  System.out.println(buckets[x].toString());
     }
 

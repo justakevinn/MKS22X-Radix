@@ -190,14 +190,22 @@ public class MyLinkedList<E>{
   }*/
 
 
-  public void extend(MyLinkedList<E> other){
-    this.end.setNext(other.start);
-    other.start.setPrev(this.end);
-    end = other.end;
-    this.size += other.size;
-    other.start = other.end = null;
+  public void extend(MyLinkedList<E> other) {
+    if (this.size() == 0) {
+      start = other.start;
+      end = other.end;
+      size = other.size();
+    }
+    else {
+      end.setNext(other.start);
+      end = other.end;
+      size = size() + other.size();
+    }
+    other.start = null;
+    other.end = null;
     other.size = 0;
   }
+
 
 
 
